@@ -20,6 +20,7 @@ namespace Valve.VR.InteractionSystem
     //-------------------------------------------------------------------------
     public class Hand : MonoBehaviour
     {
+        public bool EnableHapticPulse = true;
         // The flags used to determine how an object is attached to the hand.
         [Flags]
         public enum AttachmentFlags
@@ -1425,12 +1426,14 @@ namespace Valve.VR.InteractionSystem
         public void TriggerHapticPulse(ushort microSecondsDuration)
         {
             float seconds = (float)microSecondsDuration / 1000000f;
-            hapticAction.Execute(0, seconds, 1f / seconds, 1, handType);
+            if (EnableHapticPulse)
+                hapticAction.Execute(0, seconds, 1f / seconds, 1, handType);
         }
 
         public void TriggerHapticPulse(float duration, float frequency, float amplitude)
         {
-            hapticAction.Execute(0, duration, frequency, amplitude, handType);
+            if (EnableHapticPulse)
+                hapticAction.Execute(0, duration, frequency, amplitude, handType);
         }
 
         public void ShowGrabHint()

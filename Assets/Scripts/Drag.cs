@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 using Valve.VR.InteractionSystem;
 [RequireComponent(typeof(Interactable))]
 [RequireComponent(typeof(Rigidbody))]
@@ -21,13 +22,14 @@ public class Drag : MonoBehaviour
    // private Vector3 oldPosition;
     //private Quaternion oldRotation;
     //private Hand.AttachmentFlags attachmentFlags = Hand.defaultAttachmentFlags & (~Hand.AttachmentFlags.SnapOnAttach) & (~Hand.AttachmentFlags.DetachOthers) & (~Hand.AttachmentFlags.VelocityMovement);
-
+    private SteamVR_Action_Boolean drag = SteamVR_Input.GetBooleanAction("drag");
     private void HandHoverUpdate(Hand hand)
     {
-        GrabTypes startingGrabType = hand.GetGrabStarting();
-        bool isGrabEnding = hand.IsGrabEnding(this.gameObject);
-
-        if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
+        
+        //GrabTypes startingGrabType = hand.GetGrabStarting();
+        //bool isGrabEnding = hand.IsGrabEnding(this.gameObject);
+        this.hand = hand;
+        if (drag.state)
         {
             // Save our position/rotation so that we can restore it when we detach
             //oldPosition = transform.position;
@@ -49,21 +51,32 @@ public class Drag : MonoBehaviour
             // Attach this object to the hand
             //hand.AttachObject(gameObject, startingGrabType, attachmentFlags);
         }
-        else if (isGrabEnding)
-        {
-            // Detach this object from the hand
-            //hand.DetachObject(gameObject);
+        //else if (isGrabEnding)
+        //{
+        //    // Detach this object from the hand
+        //    //hand.DetachObject(gameObject);
 
-            // Call this to undo HoverLock
-            //hand.HoverUnlock(interactable);
+        //    // Call this to undo HoverLock
+        //    //hand.HoverUnlock(interactable);
+            
+        //    // Restore position/rotation
+        //    //transform.position = oldPosition;
+        //    //transform.rotation = oldRotation;
+        //}
+    }
+
+    private Hand hand;
+    void Update()
+    {
+        if (!drag.state && hand != null)
+        {
             var joint = hand.gameObject.GetComponentInChildren<CharacterJoint>();
             if (joint != null)
             {
                 Destroy(joint.gameObject);
             }
-            // Restore position/rotation
-            //transform.position = oldPosition;
-            //transform.rotation = oldRotation;
+
+            hand = null;
         }
     }
 }

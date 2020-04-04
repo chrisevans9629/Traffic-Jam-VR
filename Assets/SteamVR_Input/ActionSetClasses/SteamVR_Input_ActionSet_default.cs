@@ -105,6 +105,22 @@ namespace Valve.VR
             }
         }
         
+        public virtual SteamVR_Action_Boolean Drag
+        {
+            get
+            {
+                return SteamVR_Actions.default_Drag;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean Drag1
+        {
+            get
+            {
+                return SteamVR_Actions.default_Drag1;
+            }
+        }
+        
         public virtual SteamVR_Action_Vibration Haptic
         {
             get

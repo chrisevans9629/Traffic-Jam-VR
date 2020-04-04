@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts;
 using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
@@ -19,20 +20,16 @@ public class Drag : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
     }
 
-
-   // private Vector3 oldPosition;
-    //private Quaternion oldRotation;
-    //private Hand.AttachmentFlags attachmentFlags = Hand.defaultAttachmentFlags & (~Hand.AttachmentFlags.SnapOnAttach) & (~Hand.AttachmentFlags.DetachOthers) & (~Hand.AttachmentFlags.VelocityMovement);
-    //private SteamVR_Action_Boolean drag = SteamVR_Input.GetBooleanAction("drag");
-    //private SteamVR_Action_Boolean drag1 = SteamVR_Input.GetBooleanAction("drag1");
+    private CharacterJoint joint;
     private void HandHoverUpdate(Hand hand)
     {
         if (DragAction.state)
         {
-            var joint = Hand.GetComponentInChildren<CharacterJoint>();
+            
             if (joint == null)
             {
-                joint = Instantiate(JointPrefab, Hand.transform.position, Hand.transform.rotation, Hand.transform);
+                joint = Instantiate(JointPrefab, Hand.transform.position, Hand.transform.rotation);
+                joint.GetComponent<HandRigidBody>().Hand = Hand;
                 joint.connectedBody = rigidbody;
             }
 
@@ -41,22 +38,13 @@ public class Drag : MonoBehaviour
 
     void Update()
     {
-        if (!DragAction.state && Hand != null)
+        if (!DragAction.state)
         {
-            var joint = Hand.gameObject.GetComponentInChildren<CharacterJoint>();
             if (joint != null)
             {
                 Destroy(joint.gameObject);
+                joint = null;
             }
         }
-
-        //if (!drag1.state && rightHand != null)
-        //{
-        //    var joint = rightHand.gameObject.GetComponentInChildren<CharacterJoint>();
-        //    if (joint != null)
-        //    {
-        //        Destroy(joint.gameObject);
-        //    }
-        //}
     }
 }

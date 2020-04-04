@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2542869403128004471}
   - component: {fileID: 2542869403128004459}
   - component: {fileID: 2542869403128004458}
+  - component: {fileID: 6971333924352243498}
   m_Layer: 0
   m_Name: Joint
   m_TagString: Untagged
@@ -93,7 +94,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -108,7 +109,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0.5, z: 0}
   m_Axis: {x: 1, y: 1, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.35711932, y: 5.2749996, z: -0.084440306}
+  m_ConnectedAnchor: {x: 3.494, y: 2.1269999, z: -1.176}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 1, z: 1}
   m_TwistLimitSpring:
@@ -142,3 +143,17 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &6971333924352243498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2542869403128004465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51948f0f35b1f6941a3712c67ee88b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hand: {fileID: 0}
+  Speed: 10

@@ -6,7 +6,7 @@ namespace Assets.Scripts
     [RequireComponent(typeof(Rigidbody))]
     public class HandRigidBody : MonoBehaviour
     {
-        public Hand Hand;
+        public GameObject Hand;
         private Rigidbody rigidbody;
         public float Speed = 4.0f;
         void Start()
@@ -16,6 +16,8 @@ namespace Assets.Scripts
 
         private void FixedUpdate()
         {
+            if(Hand == null)
+                return;
             var targetPosition = Hand.gameObject.transform.position;
 
             var currentPosition = transform.position;

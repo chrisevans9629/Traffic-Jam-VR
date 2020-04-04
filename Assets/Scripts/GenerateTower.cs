@@ -11,9 +11,9 @@ public class GenerateTower : MonoBehaviour
 
     public GameObject Prefab;
 
-    public HandRigidBody leftHand;
+    public Grabber leftHand;
 
-    public HandRigidBody rightHand;
+    public Grabber rightHand;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +27,8 @@ public class GenerateTower : MonoBehaviour
                     var box = Instantiate(Prefab, transform.position, Quaternion.identity, transform);
 
                     var drags = box.GetComponents<Drag>();
-                    drags[0].Hand = leftHand.gameObject;
-                    drags[1].Hand = rightHand.gameObject;
+                    drags[0].Hand = leftHand;
+                    drags[1].Hand = rightHand;
 
                     box.transform.rotation = Quaternion.AngleAxis(90, Vector3.up);
                     box.transform.localPosition = new Vector3(plank * Spacing.x, floor * Spacing.y, 0);
@@ -39,8 +39,8 @@ public class GenerateTower : MonoBehaviour
                     // box.transform.rotation = Quaternion.AngleAxis(90, Vector3.up);
 
                     var drags = box.GetComponents<Drag>();
-                    drags[0].Hand = leftHand.gameObject;
-                    drags[1].Hand = rightHand.gameObject;
+                    drags[0].Hand = leftHand;
+                    drags[1].Hand = rightHand;
                     box.transform.localPosition = new Vector3(0, floor * Spacing.y, plank * Spacing.z);
                 }
             }

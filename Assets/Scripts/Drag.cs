@@ -47,8 +47,9 @@ public class Drag : MonoBehaviour
             {
                 Destroy(joint.gameObject);
                 joint = null;
-                Hand.IsGrabbing = false;
             }
+            Hand.IsGrabbing = false;
+
         }
     }
 }

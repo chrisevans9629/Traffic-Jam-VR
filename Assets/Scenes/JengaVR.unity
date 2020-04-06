@@ -1382,7 +1382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9326131032830374ea020f2487baa121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerFloors: 10
+  TowerFloors: 20
   Spacing: {x: 0.35, y: 0.2, z: 0.35}
   Prefab: {fileID: 5231482806089284873, guid: 7d147b18df0f92b43947c5abd3ea51e1, type: 3}
   leftHand: {fileID: 618764946}

@@ -1383,7 +1383,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowerFloors: 20
-  Spacing: {x: 0.35, y: 0.2, z: 0.35}
+  MassFloorRatio: 2
+  Spacing: {x: 0.35, y: 0.201, z: 0.35}
   Prefab: {fileID: 5231482806089284873, guid: 7d147b18df0f92b43947c5abd3ea51e1, type: 3}
   leftHand: {fileID: 618764946}
   rightHand: {fileID: 180083299}
@@ -1395,7 +1396,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1530384941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: 0}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}

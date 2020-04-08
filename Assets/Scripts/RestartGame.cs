@@ -16,8 +16,7 @@ public class RestartGame : MonoBehaviour
         {
             foreach (Transform o in tower.transform)
             {
-                LeanTween.color(gameObject, Color.clear, 1).setDestroyOnComplete(true);
-                //Destroy(o.gameObject);
+                Destroy(o.gameObject);
             }
             tower.BuildTower();
         }

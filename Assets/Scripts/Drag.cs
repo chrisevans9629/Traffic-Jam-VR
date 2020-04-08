@@ -14,15 +14,11 @@ public class Drag : MonoBehaviour
     private Rigidbody rigidbody;
 
     public GameObject BallPrefab;
-    //public Grabber Hand;
-    //public SteamVR_Action_Boolean DragActions;
-    // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
     }
 
-    //private CharacterJoint joint;
     private void HandHoverUpdate(Hand hand)
     {
         var grab = hand.GetGrabStarting();
@@ -41,18 +37,4 @@ public class Drag : MonoBehaviour
         }
     }
 
-    //void Update()
-    //{
-    //    var left
-    //    if ()
-    //    {
-    //        if (joint != null)
-    //        {
-    //            Destroy(joint.gameObject);
-    //            joint = null;
-    //        }
-    //        renderer.material.color = normalColor;
-
-    //    }
-    //}
 }

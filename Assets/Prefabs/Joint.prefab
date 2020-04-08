@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6971333924352243498}
   m_Layer: 0
   m_Name: Joint
-  m_TagString: Untagged
+  m_TagString: PlankJoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,5 +155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51948f0f35b1f6941a3712c67ee88b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Offset: {x: 0, y: 0, z: 0}
   ObjectToFollow: {fileID: 0}
   Speed: 20

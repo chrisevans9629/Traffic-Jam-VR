@@ -29,12 +29,14 @@ public class Drag : MonoBehaviour
         if (grab != GrabTypes.None)
         {
             Debug.Log("Grabbed!", this);
-            var ball = Instantiate(BallPrefab, transform.position, transform.rotation);
+            var ball = Instantiate(BallPrefab, hand.transform.position, hand.transform.rotation);
             hand.AttachObject(ball, GrabTypes.Grip);
             hand.HoverLock(ball.GetComponent<Interactable>());
 
-            var joint = Instantiate(JointPrefab, transform.position,transform.rotation);
-            joint.GetComponent<FollowControl>().ObjectToFollow = ball;
+            var joint = Instantiate(JointPrefab, hand.transform.position, hand.transform.rotation);
+            var follow = joint.GetComponent<FollowControl>();
+            follow.ObjectToFollow = ball;
+            follow.Offset = joint.transform.position - ball.transform.position;
             joint.connectedBody = rigidbody;
         }
     }

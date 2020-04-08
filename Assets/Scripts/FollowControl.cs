@@ -6,6 +6,8 @@ namespace Assets.Scripts
     [RequireComponent(typeof(Rigidbody))]
     public class FollowControl : MonoBehaviour
     {
+        [HideInInspector]
+        public Vector3 Offset;
         public GameObject ObjectToFollow;
         private Rigidbody rigidbody;
         public float Speed = 4.0f;
@@ -22,7 +24,7 @@ namespace Assets.Scripts
 
             var currentPosition = transform.position;
 
-            var force = (targetPosition - currentPosition) * Speed;
+            var force = (targetPosition - currentPosition + Offset) * Speed;
 
             rigidbody.velocity = force;
 

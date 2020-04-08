@@ -240,7 +240,7 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/drag"
+                     "output" : "/actions/default/in/grabgrip"
                   }
                },
                "mode" : "button",
@@ -249,7 +249,7 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/drag1"
+                     "output" : "/actions/default/in/grabgrip"
                   }
                },
                "mode" : "button",

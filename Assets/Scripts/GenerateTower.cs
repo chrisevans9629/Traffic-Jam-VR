@@ -12,9 +12,9 @@ public class GenerateTower : MonoBehaviour
 
     public GameObject Prefab;
 
-    public Grabber leftHand;
+    //public Grabber leftHand;
 
-    public Grabber rightHand;
+    //public Grabber rightHand;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,8 +75,8 @@ public class GenerateTower : MonoBehaviour
 
         //box.GetComponent<Rigidbody>().isKinematic = true;
 
-        drags[0].Hand = leftHand;
-        drags[1].Hand = rightHand;
+        //drags[0].Hand = leftHand;
+        //drags[1].Hand = rightHand;
         return box;
     }
 

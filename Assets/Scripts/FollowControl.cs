@@ -4,9 +4,9 @@ using Valve.VR.InteractionSystem;
 namespace Assets.Scripts
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class HandRigidBody : MonoBehaviour
+    public class FollowControl : MonoBehaviour
     {
-        public GameObject Hand;
+        public GameObject ObjectToFollow;
         private Rigidbody rigidbody;
         public float Speed = 4.0f;
         void Start()
@@ -16,9 +16,9 @@ namespace Assets.Scripts
 
         private void FixedUpdate()
         {
-            if(Hand == null)
+            if(ObjectToFollow == null)
                 return;
-            var targetPosition = Hand.gameObject.transform.position;
+            var targetPosition = ObjectToFollow.gameObject.transform.position;
 
             var currentPosition = transform.position;
 

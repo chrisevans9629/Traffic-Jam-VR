@@ -18,9 +18,7 @@ public class RestartGame : MonoBehaviour
             {
                 Destroy(o.gameObject);
             }
-
             tower.BuildTower();
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 

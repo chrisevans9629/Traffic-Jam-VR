@@ -63,8 +63,8 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _LightSmoothness: 0
-    - _LightThreshold: 0.138
+    - _LightSmoothness: 0.569
+    - _LightThreshold: 0.577
     - _MKEditorShowDetailBehavior: 0
     - _MKEditorShowDissolveBehavior: 0
     - _MKEditorShowLightBehavior: 1
@@ -82,14 +82,14 @@ Material:
     - _OcclusionStrength: 1
     - _OutlineSize: 0.01
     - _Parallax: 0.02
-    - _RimIntensity: 0.551
-    - _RimSize: 2.73
+    - _RimIntensity: 0.304
+    - _RimSize: 2.64
     - _RimSmoothness: 0
-    - _ShadowIntensity: 1.353
-    - _Shininess: 0.228
+    - _ShadowIntensity: 0.856
+    - _Shininess: 0.154
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpecularIntensity: 0.719
+    - _SpecularIntensity: 0.428
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
@@ -98,6 +98,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 1, g: 0.24172512, b: 0.19339621, a: 1}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SpecColor: {r: 1, g: 1, b: 1, a: 0.5}
+    - _SpecColor: {r: 1, g: 0.8945528, b: 0, a: 0.5}
